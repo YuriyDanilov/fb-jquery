@@ -15,7 +15,6 @@ class LoginForm {
         this.container = $(this.selector);
         this.loginInput = $('#login-log');
         this.passwordInput = $('#password-log');
-        this.form = $('#log-form');
         this.button = $('.btn-login');
     }
 
@@ -27,6 +26,11 @@ class LoginForm {
     }
 
     login() {
+        if (this.loginInput.val() == '' || this.passwordInput.val() == '') {
+            alert('Введите логин/пароль');
+            return;
+        }
+
         let user = new User(
             this.loginInput.val(),
             null,
@@ -52,7 +56,8 @@ class LoginForm {
     }
 
     clearForm() {
-        this.form[0].reset()
+        this.loginInput.val() == null;
+        this.passwordInput.val() == null;
     }
 
     succsessLogin() {

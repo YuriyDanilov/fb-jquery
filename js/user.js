@@ -1,7 +1,7 @@
 class User {
-    constructor(login, bornDate, password) {
+    constructor(login, date_born, password) {
         this.login = login;
-        this.bornDate = bornDate;
+        this.date_born = date_born;
         this.password = password;
     }
     static create(user) {
